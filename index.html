@@ -1,0 +1,116 @@
+<!-- esto es un comentario -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> <!-- Para poner todo tipo de asentos-->
+	<title>Mi primera aplicación móvil</title>
+	<!-- Importacion de librerias -->
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"> <!-- librerias css -->
+	<link rel="stylesheet" type="text/css" href="css/mystilo.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function (){  //Funcion por defecto
+			//alert("Hola mundo");
+			$("#btnsumar").click(function(){
+				var n1=parseInt($("#num1").val());
+				var n2=parseInt($("#num2").val());
+				var suma=n1+n2;
+				//alert("El resultado de la suma es: " + suma);
+				$("#resulsuma").val("La suma de: "+n1+" + "+n2+" = "+suma); //Lo mandamos al campo de texto resulsuma
+			});
+			$("#btnrestar").click(function(){
+				var n1=parseInt($("#num1").val());
+				var n2=parseInt($("#num2").val());
+				var restar=n1-n2;
+				//alert("El resultado de la resta es: " + restar);
+				$("#resulsuma").val("La resta de: "+n1+" - "+n2+" = "+restar); //Lo mandamos al campo de texto resulsuma
+			});
+			$("#btnmultiplicar").click(function(){
+				var n1=parseInt($("#num1").val());
+				var n2=parseInt($("#num2").val());
+				var multi=n1*n2;
+				//alert("El resultado de la multiplicacion es: " + multi);
+				$("#resulsuma").val("La multiplicación de: "+n1+" * "+n2+" = "+multi); //Lo mandamos al campo de texto resulsuma
+			});
+			$("#btndividir").click(function(){
+				var n1=parseInt($("#num1").val());
+				var n2=parseInt($("#num2").val());
+				var divi=n1/n2;
+				//alert("El resultado de la divición es: " + divi);
+				$("#resulsuma").val("La divición de: "+n1+" / "+n2+" = "+divi); //Lo mandamos al campo de texto resulsuma
+			});
+		}); //Cuando se ejecuta todo el documento
+/*
+		function sumar(){
+			var N1=document.getElementById("num1").value;
+			var N2=document.getElementById("num2").value;
+			var resultado =parseInt(N1)+parseInt(N2);
+			document.getElementById("resulsuma").value=parseInt(N1)+parseInt(N2); <!--Lo mandamos al campo de texto resulsuma -->
+			alert("La suma de: "+N1+" + "+N2+" = "+resultado);
+
+		}
+*/
+	</script>
+</head>
+<body>
+	<div data-role ="page" id="Principal">
+		<div data-role="header">
+			<p>PRINCIPAL</p> 
+		</div>
+		<div data-role="content">
+			<p>Contenido de la aplicación</p>
+			<a href="#Contacto" data-role="button" data-transition="slide">Contacto slide</a> <!-- # se utiliza para hacer referencia segido del ID de tipo buton-->
+			<a href="#Contacto" data-role="button" data-transition="slideup">Contacto up</a>
+			<a href="#Contacto" data-role="button" data-transition="slidedown">Contacto down</a>
+			<a href="#Contacto" data-role="button" data-transition="pop">Contacto pop</a>
+			<a href="#Contacto" data-role="button" data-transition="flip">Contacto flip</a>
+			<a href="#Contacto" data-role="button" data-transition="flow">Contacto flow</a>
+			<a href="#Contacto" data-role="button" data-transition="slidefade">Contacto slidefade </a>
+			<a href="#Contacto" data-role="button" data-transition="turn">Contacto turn</a>
+			<a href="#Suma" data-role="button" data-transition="turn">Calcular Suma</a>
+		</div>
+		<div data-role ="footer">
+			<a href="https://www.facebook.com.mx" class="ui-btn ui-icon-plus ui-btn-icon-top">Agregar a facebook</a>
+			<a href="https://twitter.com/?lang=es" class="ui-btn ui-icon-plus ui-btn-icon-right">Agregar a Twitter</a>
+			<a href="https://www.instagram.com" class="ui-btn ui-icon-plus ui-btn-icon-bottom">Agregar a intagaram</a>
+			<a href="https://espanol.yahoo.com/" class="ui-btn ui-icon-plus ui-btn-icon-left">Agregar a yahoo</a>
+		</div>
+	</div>
+
+	<div data-role ="page" id="Contacto" data-them="a">
+		<div data-role="header">
+			<a href="#Principal" class="ui-btn ui-icon-home ui-btn-icon-left" data-transition="pop">Principal</a>
+			<p>Contacto</p>
+			<a href="#Suma" class="ui-btn ui-icon-plus ui-btn-icon-right" data-transition="flip">Sumar</a>
+		</div>
+		<div data-role="content">
+			<p>Manuel González García</p>
+			<p>magoga65@gmail.com</p>
+		</div>
+		<div data-role ="footer">
+			<p>Pie de la palicación</p>
+		</div>
+	</div>
+
+	<div data-role ="page" id="Suma">
+		<div data-role="header">
+			<a href="#Principal" class="ui-btn ui-icon-home ui-btn-icon-left" data-transition="pop">Principal</a>
+			<p>OPERACIÓNES BASICAS</p>
+		</div>
+		<div data-role="content">
+			<input type="number" id="num1" placeholder="Escribe un número">
+			<input type="number" id="num2" placeholder="Escribe segundo numero">
+			<input type="button" id="btnsumar" value="Calcular Suma">
+			<input type="button" id="btnrestar" value="Calcular Resta">
+			<input type="button" id="btnmultiplicar" value="Calcular Multiplicación">
+			<input type="button" id="btndividir" value="Calcular Divición">
+			<input type="text" id="resulsuma">
+		</div>
+		<div data-role ="footer">
+			<p>Pie de la palicación</p>
+		</div>
+	</div>
+</body>
+</html>
